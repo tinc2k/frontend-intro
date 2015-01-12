@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Klijentska strana weba</title>
+
+		<meta name="description" content="Prezentacija za gostujuća predavanja na preddiplomskim i diplomskim studijima informatike i računarstva">
+		<meta name="author" content="Tin Crnković">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<style>
+			.reveal h1 {font-size: 2.5em;}
+		</style>
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Klijentska strana weba</h1>
+					<h4>*HTML5, CSS3, JavaScript</h4>
+					<p>
+						<small><a class="roll" href="mailto:tinc2k@gmail.com">Tin Crnković</a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="http://twitter.com/tinc2k">@tinc2k</a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="mailto:tcrnkovic@claritycon.com">tcrnkovic@claritycon.com</a></small>
+					</p>
+				</section>
+
+
+
+				<section data-markdown>
+					<script type="text/template">
+					## sadržaj pakiranja
+					* ekosustav
+					* zašto HTML5?
+					* HTML5 semantika
+					* CSS3
+					* JavaScript
+					* HTML5 API
+					</script>
+					<aside class="notes">
+						pre-flight check:
+							- tko je pisao HTML/CSS/JS do sada?
+							- tko zna razliku izmedju GET i POST?
+							- tko zna sto je MVC?
+							- MVVM? Onion? REST?
+						https://github.com/hakimel/reveal.js#markdown
+						https://help.github.com/articles/markdown-basics/
+						https://help.github.com/articles/github-flavored-markdown/
+					</aside>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h2>ekosustav</h2>
+						<blockquote>
+							The Internet is the first thing that humanity has built that humanity doesn't understand, the largest experiment in anarchy that we have ever had.
+							<br /><br />
+							- <cite>Eric Schmidt</cite>
+						</blockquote>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## evolucija (?)
+						* statični HTML
+						* CGI
+						* rudimentarni JavaScript - *simple scripting*
+						* AJAX - Web 2.0
+						* unobtrusive JavaScript
+						* klijentske aplikacije
+						* pametni klijenti i servisno orijentirana arhitektura
+						</script>
+						<aside class="notes">
+							CGI - Common Gateway Interface
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## web danas
+						* hardver
+						    * veličina, gustoća (dpi) i orijentacija zaslona
+						    * ulazni uređaji: dodir, tipkovnica, miš, kamera, GPS, akcelerometar, mikrofon, čitač otiska, *gamepad*
+						* internet
+							* visokopropustan, niska latencija (?)
+							* optička vlakna, Wi-Fi, HDSPA, LTE, HSPA+
+						</script>
+						<aside class="notes">
+							Research firm Strategy Analytics forecast sales of HTML5 compatible phones would top 1 billion in 2013.
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## web danas
+						* facebook, gmail, twitter, youtube, tumblr, pinterest, imgur, netflix, soundcloud, linkedin, maps, 9gag...
+						* connect with Facebook/Twitter/Google/Live ID
+						* *mainstream* UX
+							* gestures: swipe, drag, multitouch...
+							* iOS Human Interface Guidelines, 'Metro' Design Guide, Google Material Design...
+						</script>
+						<aside class="notes">
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h2>HTML5</h2>
+						<blockquote>
+							New open standards created in the mobile era, such as HTML5, will win.
+							<br /><br />
+							- <cite>Steve Jobs</cite>
+						</blockquote>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## HTML5
+						* HTML 5 W3C Recommendation 28 October 2014
+						* HTML 5.1 W3C Working Draft 17 June 2014
+						</script>
+						<aside class="notes">
+	    					The Web Hypertext Application Technology Working Group (WHATWG) began work on the new standard in 2004.
+	    					The final and complete fifth revision of the HTML standard of the World Wide Web Consortium (W3C). The previous version, HTML 4, was standardised in 1997.
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## HTML5
+						* skup W3C, WHATWG i ‘komercijalnih’ standarda, specifikacija i tehnologija u različitim stadijima razvoja
+						* definira sintaktičke elemente, *Document Object Model*, *lexing/parsing*, API-je, otkrivanje funkcionalnosti...
+						</script>
+						<aside class="notes">
+	    					http://en.wikipedia.org/wiki/File:HTML5_APIs_and_related_technologies_taxonomy_and_status.svg
+	    					W3C - World Wide Web Consortium
+	    					WHATWG - Web Hypertext Application Technology Working Group
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## deklaracija i head
+
+						```html
+						<!DOCTYPE html PUBLIC
+							"-//W3C//DTD XHTML 1.0 Strict//EN"
+							"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+						<html xmlns="http://www.w3.org/1999/xhtml"
+							lang="en" xml:lang="en">
+						<head>
+							<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+							<link rel="stylesheet" href="style.css" type="text/css" />
+						```
+
+						```html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="utf-8" />
+							<link rel="stylesheet" href="style.css" />
+						```
+						</script>
+						<aside class="notes">
+							https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## podnožje, zaglavlje, navigacija
+						```html
+						<header>
+							<h1>My website</h1>
+							<nav>
+								<a href="/">Home</a> | <a href="/blog">Blog</a>
+							</nav>
+						</header>
+
+						<main>
+						</main>
+
+						<footer>
+							<p>&copy;2015 My website <a href="/blobstorage/54879af.pdf"
+								download="tos.pdf">Terms of Service</a></p>
+						</footer>
+						```
+						</script>
+						<aside class="notes">
+						header - group of introductory or navigational aids for a particular section of the page
+						footer - footer of it's closest parent element
+						nav - a section with navigation links - only major navigation blocks
+						main - specifies the main content of a document
+						</aside> 
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## sekcije
+
+						```
+						<section class="recent-tweets">
+							<h1>Recent tweets</h1>
+							<article class="tweet">
+								<h1>
+									<b>Elon Musk</b>
+									<a href="https://wwww.twitter.com/elonmusk">@elonmusk</a> · 
+									<time datetime="2015-01-10 11:05">Jan 10</time>
+								</h1>
+								<p>
+									Rocket made it to drone spaceport ship, but landed hard.
+									Close, but no cigar this time.
+									Bodes well for the future tho.
+								</p>
+							</article>
+							<aside>
+								<a href="https://twitter.com/tinc2k">Follow @tinc2k</a>
+							</aside>
+						</section>
+						```
+						</script>
+						<aside class="notes">
+						section - generic document or application section, a thematic grouping of content, typically with a heading
+						article - independently distributable or reusable component of a page: article, forum post, comment, widget...
+						aside - section consisting of tangentially related content to the content around it - quotes, sidebars, advertising...
+						</aside> 
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## tipovi unosa
+						```html
+						<input type="text" name="firstName" autofocus placeholder="First Name">
+						<input type="search">
+						<input type="number" min="10" max="20" step="2" value="16" required>
+						<input type="range">
+						<input type="color">
+						<input type="tel">
+						<input type="url">
+						<input type="email">
+						<input type="date">
+						<input type="month">
+						<input type="week">
+						<input type="time">
+						<input type="datetime">
+						<input type="datetime-local">
+						```
+						</script>
+						<aside>
+						search -  for search boxes
+						number - for spinboxes
+						range - for sliders
+						color - for color pickers
+						tel - for telephone numbers
+						url - for web addresses
+						email - for email addresses
+						date - for calendar date pickers
+						month - for months
+						week - for weeks
+						time - for timestamps
+						datetime - for precise, absolute date+time stamps
+						datetime-local - for local dates and times
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							## audio
+							* MP3,  AAC, PCM, Ogg Vorbis, Ogg Opus, WebM Vorbis, WebM Opus
+							* puna podrška za Chrome i Firefox
+							* djelomična podrška za IE i Operu
+							* *playback* API
+
+							```html
+							<audio src="audio.ogg" controls autoplay loop>
+								<p>Your browser does not support the audio element </p>
+							</audio>
+							<audio src="audio.mp3" preload="auto" controls></audio>
+							```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## video
+						* Ogg Theora Vorbis, Ogg Opus, WebM VP8, WebM VP9, MP4 H.264, PCM
+						* djelomična podrška
+
+						```html
+						<video controls>
+						  <source src="foo.ogg" type="video/ogg">
+						  <source src="foo.mp4" type="video/mp4">
+						  <track kind="captions" src="sampleCaptions.srt" srclang="en">
+						  Your browser does not support the <code>video</code> element.
+						</video>
+						```
+						</script>
+						<aside>
+							https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## etc
+						* details, figure figcaption, hgroup, datetime, address, cite blockquote, code, mark, ins, del, sub, sup, samp, progress, meter...
+						</script>
+						<aside>
+							http://www.w3.org/TR/html5/
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h2>CSS3</h2>
+						<blockquote>
+							The master has failed more times than the beginner has even tried.
+							<br /><br />
+							- <cite>Stephen McCranie</cite>
+						</blockquote>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## CSS3
+						* skup različitih standarda i funkcionalnosti stvorenih nakon unificirane W3C CSS 2.1 specifikacije, podijeljenih u više od 50 modula koje održava W3C CSS radna grupa
+						* 50+ modula koje održava W3C CSS radna grupa
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## web fonts
+						* EOT, WOFF, WOFF2, SVG, TTF, OTF
+
+						```css
+						@font-face {
+							font-family: 'HelveticaNeue';
+							src:
+								/* Chrome 6+, FF 3.6+, IE 9+, Safari 5.1+ */
+								url('HelveticaNeueLTCom-Md.woff') format('woff'),
+								/* Chrome 4+, FFF 3.5, Opera 10+, Safari 3—5 */
+								url('HelveticaNeueLTCom-Md.ttf') format('truetype');
+						}
+						body {
+							font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
+						}
+						```
+						</script>
+						<aside>
+							CSS Fonts Module Level 3 nacrt standarda definira sintaksu za povezivanje fontova koji nisu instalirani na klijenskom računalu, odnosno koji su dostupni putem URL-a i privremeno instalirani za prikaz web stranice koja ih integrira.
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## pozicioniranje
+						* Flexbox - Flexibe Blox Model
+						* Grid Layout
+							* IE parcijalna podrška
+						</script>
+						<aside>
+							Grid strukture relativno su slične table strukturama, međutim bez semantike koja implicira tabularnu strukturu sadržaja i sa dodanim mogućnostima poput slojeva i preklapanja.
+							Mogućnosti Flexboxa uključuju vertikalno centriranje, definiranje redoslijeda elemenata izvan markupa, i rastresite (en. loose) definicije koje omogućuju automatsku promjenu pozicija i veličina elemenata ovisno o veličini ekrana, omogućujući tako brži razvoj responzivnog web dizajna (en. responsive web).
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## prozirnost i notacije boja
+
+						```css
+							.overlay {
+								opacity: 0.6;
+							}
+							article {
+								background: hsla(44, 100%, 33%, .70);
+								color: rgba(98, 33, 129, 0.5)
+							}
+						```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## rubovi, prijelazi, sjenčanja
+
+						* zaobljeni rubovi \m/
+						```css
+							border: 1px solid #000;
+							border-radius: 0px 10px 0px 10px;
+						```
+
+						* linearni i radijalni prijelazi
+
+						```css
+						.element {
+							background: linear-gradient(to right, #f00, #00f);
+							background: linear-gradient(left top, #f00, #00f);
+							background: linear-gradient(180deg, #f00, #00f);
+							background: linear-gradient(#f00, #0f0, #00f);
+							background: repeating-linear-gradient(#f00, yellow 10%, #0f0 20%);
+							background: repeating-radial-gradient(#f00, yellow 10%, #0f0 15%);
+						}
+						```
+
+						* sjenčanja
+
+						```css
+						.shadow {
+							box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+						}
+						```
+						</script>
+						<aside>
+							border-radius: top left, top right, bottom right, bottom left
+							box shadow: horizontal length, vertical length, blur radius, spread radius, color
+							shading: works on text and rectangular elements
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## pozadine
+
+						```css
+						.element {
+							background: url('prvi.png'), url('drugi.jpg');
+						    background-size: 100% 80px 60px;
+						    background-repeat: no-repeat;
+						}
+						```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## transformacija
+						* translate, scale, rotate
+						* skew, matrix
+
+						```css
+							.element {
+								transform: translate(50px,100px);
+								transform: rotate(30deg);
+							}
+						```
+						</script>
+						<aside>
+							http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## tranzicija
+
+						```css
+							.element {
+								transition: background-color 0.5s ease;
+							}
+							.element:hover {
+								background-color: #0f0;
+							}
+							.element2 {
+								transition: background 0.2s ease, padding 0.8s linear;
+							}
+						```
+						</script>
+						<aside>
+							transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+							http://ianlunn.github.io/Hover/
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## animacija
+
+						```css
+						div {
+							animation: prva 5s;
+						}
+						@keyframes prva {
+						    from { background: red; }
+						    to { background: yellow; }
+						}
+						@keyframes druga {
+						    0%   { background: red; }
+						    25%  { background: yellow; }
+						    50%  { background: blue; }
+						    100% { background: green; }
+						}
+						```
+						</script>
+						<aside>
+							transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+							http://ianlunn.github.io/Hover/
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## CSS predprocesiranje
+						* varijable
+						* *reusability* blokova
+						* ugnježđena pravila
+						* matematičke operacije
+						* [SASS]() / [LESS]()
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## CSS predprocesiranje
+						```
+						@tamna: #1b1b1b;
+						@svijetla: #8e8e8e;
+						@rad: 5px;
+						.primjer {
+						  color: @tamna;
+						  background-color: @svijetla;
+						  border-radius: @rad;
+						}
+						```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## CSS predprocesiranje
+						```
+						// vidljivi mixin:
+						.mojStil {
+						  border: dashed solid #2bff00;
+						}
+						// parametrizirani mixin:
+						.zaobljen (@radius: 5px) {
+						  -webkit-border-radius: @radius;
+						  -moz-border-radius: @radius;
+						  -ms-border-radius: @radius;
+						  -o-border-radius: @radius;
+						  border-radius: @radius;
+						}
+						// nevidljivi mixin:
+						.nevidljiv () {
+						  font: italic 22px Arial,Verdana;
+						}
+						// upotreba mixina u selektoru:
+						#menu a{
+						  .mojStil;
+						  .nevidljiv;
+						  .zaobljen(10);
+						}
+						```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## CSS predprocesiranje
+						```
+						// matematičke operacije
+						.primjer {
+							color: @lightGrey / 2;
+							font: bold 12px „Helvetica Neue“,arial,sans-serif;
+							width: 400px – 10% + 2em;
+						}
+
+						// posebne funkcije
+						@var: #bbb;
+						@daLiJeBoja: iscolor(@var);
+						@daLiJeUrl: isurl(@var);
+						@novaBoja: ligten(#ff6a00, 50%);
+						@drugaNovaBoja: mix(#4cff00, #b200ff, 10%);
+						@zasicenost: saturation(#ff006e);
+						@zaokruzeno: round(1.67);
+
+						// uvjetovano izvođenje (guards) - promjenom varijable boje mijenja se i pozadinska boja
+						@a: #000;
+						.windowDesigner (@a) when (lightness(@a) >= 50%) {
+							color: #000;
+						}
+						.windowDesigner (@a) when (lightness(@a) < 50%) {
+							color: #fff;
+						}
+						.windowDesigner (@a) {
+							background: @a;
+							font: normal 10px Consolas,Courier,monospace;
+							width: 390px;
+							border: 1px dashed #000;
+							margin: 10px 0 10px 0;
+						}
+						.window {
+							.windowDesigner(@a);
+						}
+						```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## CSS predprocesiranje
+						```
+						.citat {
+							.zaobljen(10px);
+							background: #bbb;
+							font: normal 12px Georgia,serif;
+							width: 370px;
+							padding: 10px 10px 20px 10px;
+							.autor {
+								float: right;
+								margin: 13px 5px 0 0;
+								background: none;
+							}
+						}
+						```
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## framework?
+						* pozicioniranje i raspored elemenata
+						* responzivnost i fluidnost rasporeda
+						* novi elementi sučelja
+						* jednostavna zamjena teme/predloška
+						* integrirane ikone i alatni simboli
+						* napredna tipografija i integracija web fontova
+						* animacija elemenata sučelja
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## framework?
+						* [Twitter Bootstrap](http://getbootstrap.com/)
+						* [HTML5 Boilerplate](http://html5boilerplate.com/)
+						* [Foundation](http://foundation.zurb.com/)
+						* [Skeleton](http://www.getskeleton.com/)
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## *authoring* framwework?
+						* [Compass](http://compass-style.org/)
+						</script>
+						<aside>
+							http://compass-style.org/help/tutorials/best_practices/
+						</aside>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>JavaScript</h2>
+						<blockquote>
+							This is a placeholder quote.
+							<br /><br />
+							- <cite>tinc2k</cite>
+						</blockquote>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## povijest
+						* 1995 Brendan Eich, Netscape
+						* 1997 ECMAScript
+						* 2005 Jesse JAmes Garrett - AJAX
+						* 2006 jQuery, Prototype, Dojo, Mootools
+						* 2009 node.js
+						* 2009 Angular.js
+						* 2013 ReactJS
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## JavaScript
+						* **the** language of the web?
+						* the **assembly** language of the web?
+						</script>
+						<aside>
+							Rjesava cest problem: poslovna logika se implementira na klijentskoj i posluziteljskoj strani 
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## JavaScript
+						* dinamički (jit?), prototipno-bazirani jezik
+						* ECMAScript 5.1 June 2011
+						* ECMAScript 6 mid 2015
+						</script>
+						<aside>
+							block-scope: every declaration is only valid for that block (C-like)
+							function scope
+							variadic function: 'arguments' as a special variable in functions
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## JavaScript
+						* dinamički tipovi
+						* objekti su asocijativna polja
+						* eval()
+						* funkcije su isto objekti
+						* anonimne funkcije - lambde
+						* prototipno-baziran jezik
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+				</section> <!-- /javascript -->
+
+
+
+
+
+
+
+				<section data-markdown>
+					<script type="text/template">
+					## Geolocation API
+					```
+$(function () {
+  if (Modernizr.geolocation) {
+    var options = {
+      enableHighAccuracy: false, /* razina preciznosti */
+      timeout: 10000,            /* maksimalno vrijeme odziva (ms) */
+      maximumAge: 10000          /* maksimalna starost uzorka (ms) */
+    };
+    navigator.geolocation.getCurrentPosition(mojGeoCallback,
+    mojErrorCallback)
+  } else {
+    alert('Vaš preglednik ne podržava HTML5 Geolocation API.')
+  }
+});
+
+function mojGeoCallback(arg) {
+  var vrijeme = arg.timestamp;          /* vrijeme uzorkovanja */
+  var sirina = arg.coords.latitude;     /* zemljopisna širina */
+  var duzina = arg.coords.longitude;    /* zemljopisna dužina */
+  var preciznost = arg.coords.accuracy; /* preciznost uzorka */
+  var visina = arg.coords.altitude;     /* nadmorska visina */
+  var smjer = arg.coords.heading;       /* smjer kretanja */
+  var brzina = arg.coords.speed;        /* brzina kretanja */
+}
+
+function mojErrorCallback(error) {
+  /* greške poput nedozvoljenog pristupa, nedostupne lokacije, timeouta */
+  var kod = error.code; 
+  var poruka = error.message;
+  alert('Greška ' + kod + ': ' + poruka)
+}
+					```
+					</script>
+					<aside>
+					</aside>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+					## Application Cache API
+					```
+<html manifest=“http://www.domena.hr/datoteka.mf“>
+/* primjer sadržaja manifest datoteke: */
+index.html
+stil.css
+images/logotip.png
+scripts/backbone.js
+					```
+					</script>
+					<aside>
+					</aside>
+				</section>
+
+
+
+				<section>
+					<h2>Hello There</h2>
+					<p>
+						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+					</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Vertical Slides</h2>
+						<p>Slides can be nested inside of each other.</p>
+						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+						<br>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Basement Level 1</h2>
+						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					</section>
+					<section>
+						<h2>Basement Level 2</h2>
+						<p>That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>Slides</h2>
+					<p>
+						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Point of View</h2>
+					<p>
+						Press <strong>ESC</strong> to enter the slide overview.
+					</p>
+					<p>
+						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+					</p>
+				</section>
+
+				<section>
+					<h2>Touch Optimized</h2>
+					<p>
+						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+					</p>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section>
+
+				<section>
+					<section id="fragments">
+						<h2>Fragments</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's different types of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment roll-in">roll-in</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p class="fragment highlight-red">highlight-red</p>
+						<p class="fragment highlight-blue">highlight-blue</p>
+					</section>
+				</section>
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=slide#/transitions">Slide</a> -
+						<a href="?transition=convex#/transitions">Convex</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						reveal.js comes with a few themes built in: <br>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+					</p>
+				</section>
+
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							<tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							<tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							<tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Speaker View</h2>
+					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+					<p>Press the <em>S</em> key to try it out.</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the page background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>State Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+					</p>
+				</section>
+
+				<section>
+					<h2>Much more</h2>
+					<ul>
+						<li>Right-to-left support</li>
+						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+					</ul>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="http://slides.com">Try the online editor</a> <br>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
