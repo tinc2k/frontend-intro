@@ -66,9 +66,11 @@
 					</script>
 					<aside class="notes">
 						pre-flight check:
-							- tko je pisao HTML/CSS/JS do sada?
-							- tko zna razliku izmedju GET i POST?
-							- tko zna sto je MVC?
+							- tko je pisao HTML/CSS
+							- tko je pisao JS/jQuery do sada?
+							- razlika izmedju GET i POST?
+							- MVC?
+							- Angular/Ember/Backbone/Knockout?
 							- MVVM? Onion? REST?
 						https://github.com/hakimel/reveal.js#markdown
 						https://help.github.com/articles/markdown-basics/
@@ -708,6 +710,7 @@
 				</section>
 
 
+
 				<section>
 					<section>
 						<h2>JavaScript</h2>
@@ -745,7 +748,9 @@
 					<section data-markdown>
 						<script type="text/template">
 						## JavaScript
-						* dinamički (jit?), prototipno-bazirani jezik
+						* dinamički (jit?) jezik i tipovi
+						* prototipno baziran
+						* eval()
 						* ECMAScript 5.1 June 2011
 						* ECMAScript 6 mid 2015
 						</script>
@@ -759,59 +764,300 @@
 					<section data-markdown>
 						<script type="text/template">
 						## JavaScript
-						* dinamički tipovi
 						* objekti su asocijativna polja
-						* eval()
 						* funkcije su isto objekti
 						* anonimne funkcije - lambde
-						* prototipno-baziran jezik
+						* trenutne (immediately invoked) funkcije 
 						</script>
 						<aside>
 						</aside>
 					</section>
 
+					<section data-markdown>
+						<script type="text/template">
+						## Quirks
+						```
+						var x = 13;
+						if (x == "13") { /*...*/ }
+						if (x === "13") { /*...*/ }
+						* function context
+						* *this* keyword
+						```
+						</script>
+						<aside>
+							http://developer.telerik.com/featured/seven-javascript-quirks-i-wish-id-known-about/
+							http://shichuan.github.io/javascript-patterns/
+							http://www.slideshare.net/rossbruniges/lwsg-writing-javascript-that-doesnt-suck
+							https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3
+							https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4
+							http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/
+						</aside>
+					</section>
+
+
+					<section data-markdown>
+						<script type="text/template">
+						## jQuery
+						```
+						// on load
+						$( document ).ready(function() {
+							console.log( 'ready!' );
+						});
+
+						// selectors
+						$( '#header' );
+						$( 'ul li' );
+						$( 'form input[name="value"]' );
+
+						// chaining
+						$( 'li' )
+						  .click(function() {
+						    $( this ).addClass( 'clicked' );
+						  })
+						  .find( 'span' )
+						    .attr( 'title', 'Hover over me' );
+
+						// events
+						$( "#dataTable tbody tr" ).on( "click", function() {
+							alert( $( this ).text() );
+						});
+						$( "#dataTable tbody" ).on( "click", "tr", function() {
+							alert( $( this ).text() );
+						});
+
+						// ajax
+						$.ajax({
+							url: "/blogs?id=5",
+							context: document.body
+						}).done(function() {
+							$( this ).addClass( "done" );
+						});
+						$.ajax({
+							type: "POST",
+							url: "some.php",
+							data: { name: "John", location: "Boston" }
+						}).done(function( msg ) {
+							alert( "Data Saved: " + msg );
+						});
+						```
+
+						* addClass(), append(), attr(), each(), find(), hide(), prepend(), remove(), removeAttr(), removeClass(), show(), submit(), text(), toggle(), val()
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## trendovi
+						* data binding
+						* framework vs. male biblioteke
+						* object-oriented JavaScript
+						* (asinkroni) moduli
+						* minimizacija
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## alati
+						* jshint
+						* *playgrounds*: jsfiddle, codepen, tinkerbin...
+						* grunt
+						* bower
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## 'biblioteke'
+						* r.js
+						* phantom.js
+						* react, angular, knockout, ember, mithril
+						</script>
+						<aside>
+						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						## transkompilacija
+						* CoffeeScript
+						* TypeScript
+						* Dart
+						* ClojureScript
+						</script>
+						<aside>
+						</aside>
+					</section>
 				</section> <!-- /javascript -->
 
 
-
-
-
-
+				<section>
+					<section>
+						<h2>HTML5 APIs</h2>
+						<blockquote>
+							This is a placeholder quote.
+							<br /><br />
+							- <cite>tinc2k</cite>
+						</blockquote>
+					</section>
 
 				<section data-markdown>
+					<script type="text/template">
+					## audio & video
+					* playback
+					* synchronization
+					* web audio api
+
+					```
+					var v = document.getElementsByTagName("video")[0];
+					v.play();
+
+					var mediaElement = document.getElementById("myMediaElementID");
+					mediaElement.pause();
+					mediaElement.seekable.start();
+					// http://foo.com/video.ogg#t=10,20
+					mediaElement.src='';
+
+					var v = document.getElementsByTagName("video")[0];
+					v.addEventListener("seeked", function() { document.getElementsByTagName("video")[0].play(); }, true);
+					v.currentTime = 10.0;
+					```
+					</script>
+					<aside>
+						http://webaudio.github.io/web-audio-api/
+						http://www.html5rocks.com/en/tutorials/webaudio/intro/
+						http://en.wikipedia.org/wiki/HTML5
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## canvas
+					* HTML Canvas 2D Context
+					* [Contre Jour](http://www.contrejour.ie/)
+					</script>
+					<aside>
+						http://www.contrejour.ie/BehindTheScenes.html#fbid=6uJwVSBRT3_
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## svg
+					* [d3.js](https://github.com/mbostock/d3/wiki/Gallery)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## webgl
+					* [WebGL Water](http://madebyevan.com/webgl-water/)
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## storage
+					* Web Storage
+					* Indexed Database
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## real-time web
+					* Web Sockets, Server-Sent Events
+					* WebRTC
+					* Web Messaging
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## i/o
+					* drag&drop
+					* file API
+					* touch events
+					</script>
+				</section>
+
+
+					<section data-markdown>
 					<script type="text/template">
 					## Geolocation API
 					```
-$(function () {
-  if (Modernizr.geolocation) {
-    var options = {
-      enableHighAccuracy: false, /* razina preciznosti */
-      timeout: 10000,            /* maksimalno vrijeme odziva (ms) */
-      maximumAge: 10000          /* maksimalna starost uzorka (ms) */
-    };
-    navigator.geolocation.getCurrentPosition(mojGeoCallback,
-    mojErrorCallback)
-  } else {
-    alert('Vaš preglednik ne podržava HTML5 Geolocation API.')
-  }
-});
+					$(function () {
+					  if (Modernizr.geolocation) {
+					    var options = {
+					      enableHighAccuracy: false, /* razina preciznosti */
+					      timeout: 10000,            /* maksimalno vrijeme odziva (ms) */
+					      maximumAge: 10000          /* maksimalna starost uzorka (ms) */
+					    };
+					    navigator.geolocation.getCurrentPosition(mojGeoCallback,
+					    mojErrorCallback)
+					  } else {
+					    alert('Vaš preglednik ne podržava HTML5 Geolocation API.')
+					  }
+					});
 
-function mojGeoCallback(arg) {
-  var vrijeme = arg.timestamp;          /* vrijeme uzorkovanja */
-  var sirina = arg.coords.latitude;     /* zemljopisna širina */
-  var duzina = arg.coords.longitude;    /* zemljopisna dužina */
-  var preciznost = arg.coords.accuracy; /* preciznost uzorka */
-  var visina = arg.coords.altitude;     /* nadmorska visina */
-  var smjer = arg.coords.heading;       /* smjer kretanja */
-  var brzina = arg.coords.speed;        /* brzina kretanja */
-}
+					function mojGeoCallback(arg) {
+					  var vrijeme = arg.timestamp;          /* vrijeme uzorkovanja */
+					  var sirina = arg.coords.latitude;     /* zemljopisna širina */
+					  var duzina = arg.coords.longitude;    /* zemljopisna dužina */
+					  var preciznost = arg.coords.accuracy; /* preciznost uzorka */
+					  var visina = arg.coords.altitude;     /* nadmorska visina */
+					  var smjer = arg.coords.heading;       /* smjer kretanja */
+					  var brzina = arg.coords.speed;        /* brzina kretanja */
+					}
 
-function mojErrorCallback(error) {
-  /* greške poput nedozvoljenog pristupa, nedostupne lokacije, timeouta */
-  var kod = error.code; 
-  var poruka = error.message;
-  alert('Greška ' + kod + ': ' + poruka)
-}
+					function mojErrorCallback(error) {
+					  /* greške poput nedozvoljenog pristupa, nedostupne lokacije, timeouta */
+					  var kod = error.code; 
+					  var poruka = error.message;
+					  alert('Greška ' + kod + ': ' + poruka)
+					}
+					```
+					</script>
+					<aside>
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+					## web apps
+					* custom scheme & content handlers
+					* notification API
+					* web workers
+					
+					```
+					// caller
+					var myWorker = new Worker("worker.js");
+					myWorker.postMessage([first.value,second.value]);
+					myWorker.terminate();
+					// worker
+					onmessage = function(e) {
+						console.log('Message received from main script');
+						var workerResult = 'Result: ' + (e.data[0] * e.data[1]);
+						console.log('Posting message back to main script');
+						postMessage(workerResult);
+					}
+					```
+					
+					* application cache 
+					
+					```
+					<html manifest=“http://www.domena.hr/datoteka.mf“>
+					/* primjer sadržaja manifest datoteke: */
+					index.html
+					stil.css
+					images/logotip.png
+					scripts/backbone.js
 					```
 					</script>
 					<aside>
@@ -819,152 +1065,67 @@ function mojErrorCallback(error) {
 				</section>
 
 
-				<section data-markdown>
-					<script type="text/template">
-					## Application Cache API
-					```
-<html manifest=“http://www.domena.hr/datoteka.mf“>
-/* primjer sadržaja manifest datoteke: */
-index.html
-stil.css
-images/logotip.png
-scripts/backbone.js
-					```
-					</script>
-					<aside>
-					</aside>
-				</section>
+			</section>
 
 
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+			<section data-markdown>
+				<script type="text/template">
+					## in conclusion...
+					* HTML5 4 ever
+					* browser = OS
+					* JavaScript FTW
+				</script>
+				<aside>
+					http://www.slideshare.net/rossbruniges/lwsg-writing-javascript-that-doesnt-suck
+					http://addyosmani.com/largescalejavascript/
+					http://shichuan.github.io/javascript-patterns/
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+				</aside>
+			</section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+			<section data-markdown>
+				<script type="text/template">
+					## sources
+					* [Mozilla Developer Network](https://developer.mozilla.org/en-US/)
+					* [A List Apart](http://alistapart.com/)
+					* [QuirksBlog](http://www.quirksmode.org/blog/)
+					* [Dive into HTML5](http://diveintohtml5.info/)
+					* [HTML5 Rocks](http://www.html5rocks.com/en/)
+					* stackoverflow, dzone...
+				</script>
+			</section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+<!--
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+var thingsWeCanDo = {
+	doThisThing      : function() { /* behavior */ },
+	doThatThing      : function() { /* behavior */ },
+	doThisOtherThing : function() { /* behavior */ },
+	default          : function() { /* behavior */ }
+};
+var marty = {
+	firstName: "Marty",
+	lastName: "McFly",
+	timeTravel: function(year) {
+		console.log(this.firstName + " " + this.lastName + " is time traveling to " + year);
+	}
+}
+marty.timeTravel(1955); // Marty McFly is time traveling to 1955
+var doc = {
+	firstName: "Emmett",
+	lastName: "Brown",
+}
+doc.timeTravel = marty.timeTravel;
 
-						```
-						<section data-markdown>
-						  ## Markdown support
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+-->
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
 
 				<section>
 					<section data-background="#dddddd">
@@ -992,174 +1153,6 @@ scripts/backbone.js
 					</section>
 				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
 
 			</div>
 
