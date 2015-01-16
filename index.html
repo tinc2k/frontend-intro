@@ -48,7 +48,7 @@
 					<h1>Klijentska strana weba</h1>
 					<h4>*HTML5, CSS3, JavaScript</h4>
 					<p>
-						<small><a class="roll" href="mailto:tinc2k@gmail.com">Tin Crnković</a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="http://twitter.com/tinc2k">@tinc2k</a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="mailto:tcrnkovic@claritycon.com">tcrnkovic@claritycon.com</a></small>
+						<a class="roll" href="mailto:tinc2k@gmail.com">Tin Crnković</a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="http://twitter.com/tinc2k">@tinc2k</a>&nbsp;&nbsp;//&nbsp;&nbsp;<a href="mailto:tcrnkovic@claritycon.com">tcrnkovic@claritycon.com</a>
 					</p>
 				</section>
 
@@ -128,7 +128,7 @@
 						* connect with Facebook/Twitter/Google/Live ID
 						* *mainstream* UX
 							* gestures: swipe, drag, multitouch...
-							* iOS Human Interface Guidelines, 'Metro' Design Guide, Google Material Design...
+							* iOS Human Interface Guidelines[*](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html), 'Metro' Design Guide[*](http://dev.windows.com/en-us/design), Google Material Design[*](http://www.google.com/design/spec/material-design/introduction.html)...
 						</script>
 						<aside class="notes">
 						</aside>
@@ -221,10 +221,10 @@
 						```
 						</script>
 						<aside class="notes">
-						header - group of introductory or navigational aids for a particular section of the page
-						footer - footer of it's closest parent element
-						nav - a section with navigation links - only major navigation blocks
-						main - specifies the main content of a document
+							header - group of introductory or navigational aids for a particular section of the page
+							footer - footer of it's closest parent element
+							nav - a section with navigation links - only major navigation blocks
+							main - specifies the main content of a document
 						</aside> 
 					</section>
 
@@ -254,9 +254,9 @@
 						```
 						</script>
 						<aside class="notes">
-						section - generic document or application section, a thematic grouping of content, typically with a heading
-						article - independently distributable or reusable component of a page: article, forum post, comment, widget...
-						aside - section consisting of tangentially related content to the content around it - quotes, sidebars, advertising...
+							section - generic document or application section, a thematic grouping of content, typically with a heading
+							article - independently distributable or reusable component of a page: article, forum post, comment, widget...
+							aside - section consisting of tangentially related content to the content around it - quotes, sidebars, advertising...
 						</aside> 
 					</section>
 
@@ -267,33 +267,33 @@
 						<input type="text" name="firstName" autofocus placeholder="First Name">
 						<input type="search">
 						<input type="number" min="10" max="20" step="2" value="16" required>
-						<input type="range">
+						<input type="range" min="0" max="10">
 						<input type="color">
-						<input type="tel">
+						<input type="tel" size="10"> <!-- mobile native -->
 						<input type="url">
 						<input type="email">
 						<input type="date">
 						<input type="month">
 						<input type="week">
 						<input type="time">
-						<input type="datetime">
-						<input type="datetime-local">
+						<input type="datetime"> <!-- mobile native -->
+						<input type="datetime-local"> <!-- mobile native -->
 						```
 						</script>
 						<aside>
-						search -  for search boxes
-						number - for spinboxes
-						range - for sliders
-						color - for color pickers
-						tel - for telephone numbers
-						url - for web addresses
-						email - for email addresses
-						date - for calendar date pickers
-						month - for months
-						week - for weeks
-						time - for timestamps
-						datetime - for precise, absolute date+time stamps
-						datetime-local - for local dates and times
+							search -  for search boxes
+							number - for spinboxes
+							range - for sliders
+							color - for color pickers
+							tel - for telephone numbers
+							url - for web addresses
+							email - for email addresses
+							date - for calendar date pickers
+							month - for months
+							week - for weeks
+							time - for timestamps
+							datetime - for precise, absolute date+time stamps
+							datetime-local - for local dates and times
 						</aside>
 					</section>
 
@@ -339,7 +339,7 @@
 					<section data-markdown>
 						<script type="text/template">
 						## etc
-						* details, figure figcaption, hgroup, datetime, address, cite blockquote, code, mark, ins, del, sub, sup, samp, progress, meter...
+						* details, figure figcaption, hgroup, datetime, address, cite blockquote, code, mark, ins, del, sub, sup, samp, progress, meter, output...
 						</script>
 						<aside>
 							http://www.w3.org/TR/html5/
@@ -418,20 +418,18 @@
 							}
 						```
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
 						<script type="text/template">
 						## rubovi, prijelazi, sjenčanja
-
 						* zaobljeni rubovi \m/
+
 						```css
 							border: 1px solid #000;
 							border-radius: 0px 10px 0px 10px;
 						```
-
 						* linearni i radijalni prijelazi
 
 						```css
@@ -444,7 +442,6 @@
 							background: repeating-radial-gradient(#f00, yellow 10%, #0f0 15%);
 						}
 						```
-
 						* sjenčanja
 
 						```css
@@ -472,8 +469,7 @@
 						}
 						```
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -499,15 +495,15 @@
 						## tranzicija
 
 						```css
-							.element {
-								transition: background-color 0.5s ease;
-							}
-							.element:hover {
-								background-color: #0f0;
-							}
-							.element2 {
-								transition: background 0.2s ease, padding 0.8s linear;
-							}
+						.element {
+							transition: background-color 0.5s ease;
+						}
+						.element:hover {
+							background-color: #0f0;
+						}
+						.element2 {
+							transition: background 0.2s ease, padding 0.8s linear;
+						}
 						```
 						</script>
 						<aside>
@@ -536,10 +532,7 @@
 						}
 						```
 						</script>
-						<aside>
-							transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
-							http://ianlunn.github.io/Hover/
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -549,10 +542,9 @@
 						* *reusability* blokova
 						* ugnježđena pravila
 						* matematičke operacije
-						* [SASS]() / [LESS]()
+						* [SASS](http://sass-lang.com/) / [LESS](http://lesscss.org/) / [Stylus](http://learnboost.github.io/stylus/)
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -569,8 +561,7 @@
 						}
 						```
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -601,8 +592,7 @@
 						}
 						```
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -715,9 +705,9 @@
 					<section>
 						<h2>JavaScript</h2>
 						<blockquote>
-							This is a placeholder quote.
+							Programming is easy like riding a bike. Except the bike is on fire and you're on fire and everything is on fire and you're actually in hell.
 							<br /><br />
-							- <cite>tinc2k</cite>
+							- <cite><a href="htps://wwww.twitter.com/matixmatix">@matixmatix</a></cite>
 						</blockquote>
 					</section>
 
@@ -767,21 +757,66 @@
 						* objekti su asocijativna polja
 						* funkcije su isto objekti
 						* anonimne funkcije - lambde
-						* trenutne (immediately invoked) funkcije 
+						* trenutne (*immediately invoked*) funkcije 
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
 						<script type="text/template">
-						## Quirks
 						```
-						var x = 13;
-						if (x == "13") { /*...*/ }
-						if (x === "13") { /*...*/ }
-						* function context
-						* *this* keyword
+						var num = 13;
+						if (num == "13") {
+							console.log('pink');
+						}
+						if (num === "13") {
+							console.log('black');
+						}
+
+						var array = new Array(3);
+						if (array == ",,")
+						{
+						    console.log('magenta');
+						}
+						```
+						</script>
+						<aside></aside>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+						```
+						function test() {
+						    var x = 32;
+						    for (var i = 0; i < 5; i++)
+						    {
+						        if (i === 0)
+						        {
+						            var y = 5;
+						        }
+						    }
+						    console.log(x);
+						    console.log(i);
+						    console.log(y);
+						}
+
+						test();
+						console.log(x);
+						console.log(i);
+						console.log(y);
+						```
+					</script>
+					<aside></aside>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+						```
+						console.log('red');
+						setTimeout(
+						    function(){ console.log('green'); },
+						    1000);
+						console.log('blue');
 						```
 						</script>
 						<aside>
@@ -792,6 +827,31 @@
 							https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4
 							http://www.breck-mckye.com/blog/2014/12/the-state-of-javascript-in-2015/
 						</aside>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+						```
+						var charlie = {
+							firstName: "Charlie",
+							lastName: "Parker",
+							play: function(song) {
+								console.log(
+									this.firstName + " " +
+									this.lastName + " is playing " + song
+								);
+							}
+						}
+						charlie.play('Lester Leaps In');
+						var miles = {
+							firstName: "Miles",
+							lastName: "Davis",
+						}
+						miles.play = charlie.play;
+						miles.play('Kind of Blue');
+						```
+						</script>
+						<aside></aside>
 					</section>
 
 
@@ -843,8 +903,7 @@
 
 						* addClass(), append(), attr(), each(), find(), hide(), prepend(), remove(), removeAttr(), removeClass(), show(), submit(), text(), toggle(), val()
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -856,8 +915,7 @@
 						* (asinkroni) moduli
 						* minimizacija
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
@@ -868,31 +926,28 @@
 						* grunt
 						* bower
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
 						<script type="text/template">
 						## 'biblioteke'
-						* r.js
-						* phantom.js
+						* [r.js](http://requirejs.org/docs/start.html), [underscore.js](http://underscorejs.org/)
 						* react, angular, knockout, ember, mithril
+						* [phantom.js](http://phantomjs.org/)
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 
 					<section data-markdown>
 						<script type="text/template">
 						## transkompilacija
-						* CoffeeScript
-						* TypeScript
-						* Dart
-						* ClojureScript
+						* [CoffeeScript](http://coffeescript.org/)
+						* [TypeScript](http://www.typescriptlang.org/)
+						* [Dart](https://www.dartlang.org/)
+						* [ClojureScript](https://github.com/clojure/clojurescript)
 						</script>
-						<aside>
-						</aside>
+						<aside></aside>
 					</section>
 				</section> <!-- /javascript -->
 
@@ -901,9 +956,9 @@
 					<section>
 						<h2>HTML5 APIs</h2>
 						<blockquote>
-							This is a placeholder quote.
+							Two wrong are not make one right except in distributed database.
 							<br /><br />
-							- <cite>tinc2k</cite>
+							- <cite><a href="https://twitter.com/devops_borat">DevOps Borat</a></cite>
 						</blockquote>
 					</section>
 
@@ -958,6 +1013,7 @@
 					<script type="text/template">
 					## webgl
 					* [WebGL Water](http://madebyevan.com/webgl-water/)
+					* [three.js](http://threejs.org/)
 					</script>
 				</section>
 
@@ -1024,8 +1080,7 @@
 					}
 					```
 					</script>
-					<aside>
-					</aside>
+					<aside></aside>
 				</section>
 
 				<section data-markdown>
@@ -1060,8 +1115,7 @@
 					scripts/backbone.js
 					```
 					</script>
-					<aside>
-					</aside>
+					<aside></aside>
 				</section>
 
 
@@ -1080,8 +1134,6 @@
 					http://www.slideshare.net/rossbruniges/lwsg-writing-javascript-that-doesnt-suck
 					http://addyosmani.com/largescalejavascript/
 					http://shichuan.github.io/javascript-patterns/
-
-
 				</aside>
 			</section>
 
@@ -1093,66 +1145,22 @@
 					* [QuirksBlog](http://www.quirksmode.org/blog/)
 					* [Dive into HTML5](http://diveintohtml5.info/)
 					* [HTML5 Rocks](http://www.html5rocks.com/en/)
-					* stackoverflow, dzone...
+					* [JavaScript.isSexy](http://javascriptissexy.com/)
+					* [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/)
 				</script>
 			</section>
 
+			<section data-markdown>
+				<script type="text/template">
+					## say hello
+					[github.com/tinc2k/frontend-intro/](https://github.com/tinc2k/frontend-intro/)
 
-<!--
+					[tinc2k@gmail.com](mailto:tinc2k@gmail.com)
 
-var thingsWeCanDo = {
-	doThisThing      : function() { /* behavior */ },
-	doThatThing      : function() { /* behavior */ },
-	doThisOtherThing : function() { /* behavior */ },
-	default          : function() { /* behavior */ }
-};
-var marty = {
-	firstName: "Marty",
-	lastName: "McFly",
-	timeTravel: function(year) {
-		console.log(this.firstName + " " + this.lastName + " is time traveling to " + year);
-	}
-}
-marty.timeTravel(1955); // Marty McFly is time traveling to 1955
-var doc = {
-	firstName: "Emmett",
-	lastName: "Brown",
-}
-doc.timeTravel = marty.timeTravel;
-
-
--->
-
-
-
-
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
+					[@tinc2k](https://twitter.com/tinc2k)
+				</script>
+				<pre><code></code></pre> <!-- syntax highlighting bugfix, don't remove me -->
+			</section>
 
 			</div>
 
